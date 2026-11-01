@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JAI Resume Maker | Part-Time Virtual Assistant</title>
+<meta name="description" content="Part-time General Virtual Assistant offering administrative and data entry support: spreadsheets, document preparation, online research, basic e-commerce help, and email and calendar support.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%236B1E2E'/%3E%3Ctext x='32' y='43' font-size='32' text-anchor='middle' fill='%23FBF8F2' font-family='Georgia,serif'%3EJ%3C/text%3E%3C/svg%3E">
+
+<!--
+  HOW TO EDIT THIS PAGE
+  - All text is plain HTML. Search (Ctrl+F) for the words you want to change.
+  - Colors are set once in the :root block below.
+  - To add your photo: upload it to the same folder (for example photo.jpg), then in the About
+    section replace the <div class="avatar">...</div> with:
+      <img class="avatar" src="photo.jpg" alt="Photo of JAI Resume Maker">
+  - To move a tool between "Proficient In", "Familiar With" or "Currently Learning",
+    move its <li> into the matching <ul> (see the Tools section).
+-->
+
+<style>
+:root{
+  --cream:#FBF8F2;
+  --soft:#F3ECE0;
+  --card:#FFFFFF;
+  --ink:#26252A;
+  --muted:#645F5B;
+  --line:#E6DDCE;
+  --burg:#6B1E2E;
+  --burg-dark:#511623;
+  --burg-tint:#F6E9EB;
+  --ok:#2F6B4A; --ok-bg:#E6F2EB;
+  --warn:#8A5A00; --warn-bg:#FBF0D6;
+  --bad:#8E2430; --bad-bg:#F8E3E5;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65;font-size:16px}
+h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;line-height:1.25;margin:0 0 .5em;color:var(--ink)}
+h1{font-size:clamp(2rem,5vw,3.1rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,3.4vw,2.1rem)}
+h3{font-size:1.2rem}
+p{margin:0 0 1em}
+a{color:var(--burg)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.alt{background:var(--soft)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--burg);font-weight:700;margin-bottom:10px}
+.lead{color:var(--muted);max-width:720px;font-size:1.05rem}
+.section-head{margin-bottom:34px}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:20;background:rgba(251,248,242,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:62px}
+.brand{font-family:Georgia,serif;font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand span{color:var(--burg)}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+nav a{color:var(--ink);text-decoration:none;font-size:.9rem;padding:8px 12px;border-radius:8px;white-space:nowrap}
+nav a:hover{background:var(--burg-tint);color:var(--burg)}
+
+/* Buttons */
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:600;text-decoration:none;font-size:.97rem;border:2px solid var(--burg);transition:background .15s,color .15s}
+.btn.primary{background:var(--burg);color:#fff}
+.btn.primary:hover{background:var(--burg-dark);border-color:var(--burg-dark)}
+.btn.ghost{background:transparent;color:var(--burg)}
+.btn.ghost:hover{background:var(--burg-tint)}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* Hero */
+.hero{padding:84px 0 56px}
+.hero h1 .sub{display:block;font-size:.55em;color:var(--burg);margin-top:.35em;font-weight:400}
+.hero .intro{font-size:1.15rem;max-width:700px;color:#3a3737}
+.value{border-left:4px solid var(--burg);padding:4px 0 4px 16px;margin:26px 0 0;max-width:700px;color:var(--ink);font-weight:600}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:44px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+.fact strong{display:block;font-family:Georgia,serif;font-size:1.25rem;color:var(--burg)}
+.fact span{font-size:.88rem;color:var(--muted)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:220px 1fr;gap:40px;align-items:start}
+.avatar{width:200px;height:200px;border-radius:50%;background:var(--burg);color:var(--cream);display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-size:3.4rem;border:6px solid var(--burg-tint);object-fit:cover}
+.pill-list{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px;padding:0;list-style:none}
+.pill-list li{background:var(--burg-tint);color:var(--burg-dark);padding:6px 12px;border-radius:99px;font-size:.88rem;font-weight:600}
+.principles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:22px}
+.principle{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+.principle h4{font-size:1rem;margin-bottom:4px;color:var(--burg)}
+.principle p{margin:0;font-size:.92rem;color:var(--muted)}
+
+/* Cards */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.card h3{display:flex;gap:10px;align-items:center}
+.letter{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:8px;background:var(--burg);color:#fff;font-family:Georgia,serif;font-size:.95rem;flex:none}
+.card ul{margin:0 0 14px;padding-left:20px;color:#3a3737}
+.card ul li{margin-bottom:3px}
+.expect{font-size:.92rem;background:var(--cream);border-radius:8px;padding:10px 14px;color:var(--muted);margin:0}
+.expect b{color:var(--ink)}
+
+/* Tools */
+.tool-group{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.tool-group h3{font-size:1.05rem;margin-bottom:12px}
+.level{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin:12px 0 6px;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--cream);padding:6px 12px;border-radius:8px;font-size:.9rem}
+.chips.pro li{border-color:var(--burg);color:var(--burg-dark);background:var(--burg-tint);font-weight:600}
+.tools-note{margin-top:20px;font-size:.92rem;color:var(--muted)}
+
+/* Samples */
+.sample-note{background:var(--burg-tint);border:1px solid #E7C9CE;color:var(--burg-dark);padding:14px 18px;border-radius:var(--radius);margin-bottom:34px;font-size:.95rem}
+.sample{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);margin-bottom:30px;overflow:hidden}
+.sample-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+.sample-head h3{margin:0;font-size:1.25rem}
+.sample-head h3 small{color:var(--burg);font-family:-apple-system,"Segoe UI",Arial,sans-serif;font-size:.8rem;letter-spacing:.08em;display:block;margin-bottom:2px}
+.badge{font-size:.7rem;letter-spacing:.1em;font-weight:700;border:1.5px solid var(--burg);color:var(--burg);padding:4px 10px;border-radius:99px;white-space:nowrap}
+.sample-body{padding:24px}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 28px;margin:0 0 22px}
+.meta div dt{font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--burg);font-weight:700;margin-bottom:2px}
+.meta div dd{margin:0;font-size:.94rem;color:#3a3737}
+.preview-label{font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:700;margin:0 0 8px}
+.preview{border:1px solid var(--line);border-radius:10px;background:#fff;padding:0;overflow:hidden}
+.pad{padding:20px}
+.scroll{overflow-x:auto}
+table.sheet{border-collapse:collapse;width:100%;font-size:.86rem;min-width:620px}
+.sheet th{background:var(--burg);color:#fff;text-align:left;padding:9px 12px;font-weight:600;white-space:nowrap;position:relative}
+.sheet td{padding:8px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+.sheet tbody tr:nth-child(even){background:#FBF8F2}
+.sheet .num{text-align:right;font-variant-numeric:tabular-nums}
+.sheet tfoot td{font-weight:700;background:var(--soft);border-top:2px solid var(--burg)}
+.sheet.wrapcells td{white-space:normal}
+.tag{display:inline-block;padding:2px 9px;border-radius:99px;font-size:.78rem;font-weight:600}
+.tag.ok{background:var(--ok-bg);color:var(--ok)}
+.tag.warn{background:var(--warn-bg);color:var(--warn)}
+.tag.bad{background:var(--bad-bg);color:var(--bad)}
+.formula-note{font-size:.85rem;color:var(--muted);margin:12px 0 0}
+code{background:var(--soft);padding:1px 6px;border-radius:5px;font-size:.88em}
+
+/* Document preview */
+.paper{max-width:720px;margin:0 auto;background:#fff;padding:36px 40px;font-family:Georgia,"Times New Roman",serif;font-size:.95rem;border:1px solid var(--line);box-shadow:0 2px 14px rgba(0,0,0,.06)}
+.paper .lh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--burg);padding-bottom:10px;margin-bottom:18px}
+.paper .lh b{color:var(--burg);font-size:1.1rem}
+.paper .lh span{font-size:.82rem;color:var(--muted);font-family:Arial,sans-serif}
+.paper h4{font-size:1.05rem;margin:0 0 10px;text-transform:uppercase;letter-spacing:.06em}
+.paper table{border-collapse:collapse;width:100%;margin:14px 0;font-family:Arial,sans-serif;font-size:.86rem}
+.paper th{background:var(--soft);text-align:left;padding:8px;border-bottom:2px solid var(--burg)}
+.paper td{padding:8px;border-bottom:1px solid var(--line)}
+.paper td.r,.paper th.r{text-align:right}
+.paper .small{font-size:.85rem;color:var(--muted)}
+.paper-wrap{background:var(--soft);padding:22px 12px}
+
+/* Research */
+.callout{background:var(--soft);border-left:4px solid var(--burg);padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0;font-size:.93rem}
+.report h4{font-size:1rem;color:var(--burg);margin:18px 0 6px}
+
+/* Listing */
+.listing{display:grid;grid-template-columns:240px 1fr;gap:26px}
+.photo-ph{aspect-ratio:1/1;background:var(--soft);border:1px dashed #cdbfa8;border-radius:10px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.85rem;color:var(--muted);padding:14px}
+.price{font-family:Georgia,serif;font-size:1.5rem;color:var(--burg);font-weight:700}
+.listing ul{padding-left:20px;margin:0 0 14px}
+.specs{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:8px}
+.specs td{padding:6px 0;border-bottom:1px solid var(--line)}
+.specs td:first-child{color:var(--muted);width:38%}
+
+/* Transcript */
+.transcript{font-size:.92rem}
+.transcript p{margin:0 0 10px;display:grid;grid-template-columns:86px 110px 1fr;gap:10px}
+.transcript .ts{color:var(--muted);font-variant-numeric:tabular-nums}
+.transcript .sp{font-weight:700;color:var(--burg)}
+
+/* Email templates */
+.mail{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:#fff;font-size:.92rem}
+.mail .subj{font-weight:700;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.mail p{margin:0 0 8px}
+.mail-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--burg);font-weight:700;margin-bottom:6px}
+
+/* Tree */
+pre.tree{margin:0;background:#fff;padding:18px 20px;font-size:.85rem;line-height:1.55;overflow-x:auto;font-family:ui-monospace,Menlo,Consolas,monospace;color:#3a3737}
+
+/* Why */
+.why{counter-reset:w}
+.why .card{position:relative;padding-top:48px}
+.why .card::before{counter-increment:w;content:counter(w,decimal-leading-zero);position:absolute;top:16px;left:24px;font-family:Georgia,serif;color:var(--burg);font-weight:700}
+
+/* Contact */
+.contact-box{background:var(--burg);color:#fff;border-radius:16px;padding:44px 36px;display:grid;grid-template-columns:1.2fr 1fr;gap:34px}
+.contact-box h2,.contact-box h3{color:#fff}
+.contact-box p{color:#F1DFE2}
+.contact-box a{color:#fff}
+.contact-lines{list-style:none;margin:0;padding:0}
+.contact-lines li{margin-bottom:14px}
+.contact-lines span{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#E8C7CD}
+.contact-lines a{font-size:1.05rem;word-break:break-word}
+.btn.light{background:var(--cream);color:var(--burg);border-color:var(--cream)}
+.btn.light:hover{background:#fff}
+.btn.outline-light{background:transparent;color:#fff;border-color:#fff}
+.btn.outline-light:hover{background:rgba(255,255,255,.12)}
+.brief{margin:0;padding-left:20px;color:#F7EAEC}
+
+footer{padding:30px 0;border-top:1px solid var(--line);font-size:.88rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+@media (max-width:760px){
+  section{padding:54px 0}
+  .hero{padding:52px 0 40px}
+  .about-grid{grid-template-columns:1fr}
+  .avatar{width:140px;height:140px;font-size:2.4rem}
+  .listing{grid-template-columns:1fr}
+  .contact-box{grid-template-columns:1fr;padding:30px 22px}
+  .paper{padding:22px 18px}
+  .transcript p{grid-template-columns:1fr;gap:0}
+  .top .wrap{flex-direction:column;align-items:flex-start;gap:0;padding-top:8px;padding-bottom:4px}
+  nav{width:100%}
+}
+@media print{
+  header.top,.btn-row{display:none}
+  section{padding:24px 0}
+  .sample{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#home">JAI <span>Resume Maker</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#tools">Tools</a>
+      <a href="#samples">Work Samples</a>
+      <a href="#why">Why Me</a>
+      <a href="#availability">Availability</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <p class="eyebrow">Virtual Assistant Portfolio</p>
+    <h1>Part-Time General Virtual Assistant
+      <span class="sub">Administrative &amp; Data Entry Support</span>
+    </h1>
+    <p class="intro">I help small business owners, online sellers, and busy professionals keep their routine work accurate and organized, from spreadsheets and documents to online research, product listings, and inbox support.</p>
+    <p class="value">Clean records. Clear documents. Tasks completed as agreed.</p>
+    <div class="btn-row">
+      <a class="btn primary" href="mailto:greattaste0101@gmail.com?subject=Virtual%20Assistant%20Inquiry">Email Me</a>
+      <a class="btn ghost" href="https://wa.me/639082543348" target="_blank" rel="noopener">Message on WhatsApp</a>
+      <a class="btn ghost" href="#samples">View Work Samples</a>
+    </div>
+    <div class="facts">
+      <div class="fact"><strong>48 WPM</strong><span>Typing speed</span></div>
+      <div class="fact"><strong>Formulas &amp; Filters</strong><span>Spreadsheet work beyond basic entry</span></div>
+      <div class="fact"><strong>Transcription</strong><span>Audio to clean, formatted text</span></div>
+      <div class="fact"><strong>Philippines · GMT+8</strong><span>Flexible, agreed working hours</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="alt" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <!-- To use your photo, replace the next line with: <img class="avatar" src="photo.jpg" alt="Photo of JAI Resume Maker"> -->
+      <div class="avatar" role="img" aria-label="JAI Resume Maker monogram">JRM</div>
+      <div>
+        <p class="eyebrow">About Me</p>
+        <h2>Organized, careful, and easy to work with</h2>
+        <p>I am a Political Science student, a debater, and a Civil Service Examination (Professional level) passer. I also run JAI Resume Maker, an online writing service, so I am already used to handling client requests, deadlines, and document preparation in real work.</p>
+        <p>Debate trained me to research quickly, organize information clearly, and communicate with precision. Preparing documents for clients trained me to follow instructions closely and to treat personal information with care. These are the habits I bring to administrative work.</p>
+        <ul class="pill-list">
+          <li>AB Political Science Student</li>
+          <li>Debater</li>
+          <li>Civil Service Exam (Professional) Passer</li>
+          <li>Online Writing Service Operator</li>
+        </ul>
+        <div class="principles">
+          <div class="principle"><h4>Accuracy</h4><p>I double-check entries, figures, and spelling before I hand work over.</p></div>
+          <div class="principle"><h4>Organization</h4><p>Consistent file names, tidy folders, and clearly structured records.</p></div>
+          <div class="principle"><h4>Confidentiality</h4><p>Client files and personal data stay private and are used only for the task.</p></div>
+          <div class="principle"><h4>Timeliness</h4><p>Deadlines are agreed before I start, and I tell you early if anything changes.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>What you can hire me for</h2>
+      <p class="lead">Five focused service areas for routine, repeatable work that is better off your plate.</p>
+    </div>
+    <div class="grid g2">
+      <article class="card">
+        <h3><span class="letter">A</span>Data Entry &amp; Spreadsheet Management</h3>
+        <ul>
+          <li>Data entry and encoding</li>
+          <li>Copy-paste and transfer tasks</li>
+          <li>Spreadsheet updating and clean-up</li>
+          <li>Sorting, filtering, and organizing data</li>
+          <li>Basic record keeping</li>
+        </ul>
+        <p class="expect"><b>You can expect:</b> consistent formatting, checked entries, and a spreadsheet that is ready to use.</p>
+      </article>
+      <article class="card">
+        <h3><span class="letter">B</span>Document Preparation &amp; Formatting</h3>
+        <ul>
+          <li>Document typing</li>
+          <li>Formatting letters, reports, and forms</li>
+          <li>Basic report preparation</li>
+          <li>Audio-to-text transcription</li>
+          <li>File organization</li>
+        </ul>
+        <p class="expect"><b>You can expect:</b> clean, consistent documents that are proofread and ready to send or print.</p>
+      </article>
+      <article class="card">
+        <h3><span class="letter">C</span>Online Research &amp; Data Collection</h3>
+        <ul>
+          <li>Internet research</li>
+          <li>Information gathering and comparison</li>
+          <li>Data collection</li>
+          <li>Contact information research</li>
+          <li>Organizing findings into summaries</li>
+        </ul>
+        <p class="expect"><b>You can expect:</b> findings organized in a table or short report, with sources noted.</p>
+      </article>
+      <article class="card">
+        <h3><span class="letter">D</span>Basic E-commerce Assistance</h3>
+        <ul>
+          <li>Product listing assistance</li>
+          <li>Product information encoding</li>
+          <li>Product description formatting</li>
+          <li>Basic inventory tracking</li>
+          <li>Organizing product records</li>
+        </ul>
+        <p class="expect"><b>You can expect:</b> complete, consistently formatted listings and up-to-date product records.</p>
+      </article>
+      <article class="card">
+        <h3><span class="letter">E</span>Basic Administrative Support</h3>
+        <ul>
+          <li>Email organization</li>
+          <li>Digital file management</li>
+          <li>Calendar and scheduling assistance</li>
+          <li>Basic customer inquiry responses</li>
+          <li>General administrative tasks</li>
+        </ul>
+        <p class="expect"><b>You can expect:</b> an organized inbox and calendar, and polite, clear replies in your preferred tone.</p>
+      </article>
+      <article class="card" style="background:var(--burg-tint);border-color:#E7C9CE">
+        <h3>Not sure where your task fits?</h3>
+        <p>If your task is routine, online, and can be done in a browser or office apps, send me the details. I will tell you honestly whether I can handle it and how long it should take.</p>
+        <a class="btn primary" href="#contact">Discuss Your Task</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="alt" id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Tools &amp; Technologies</p>
+      <h2>Tools I use for client work</h2>
+      <p class="lead">Grouped by the kind of work they support. Everything listed here is a tool I am proficient in.</p>
+    </div>
+
+    <!--
+      To add levels later, copy this pattern inside any group:
+        <p class="level">Familiar With</p>
+        <ul class="chips"><li>Tool name</li></ul>
+        <p class="level">Currently Learning</p>
+        <ul class="chips"><li>Tool name</li></ul>
+    -->
+
+    <div class="grid g2">
+      <div class="tool-group">
+        <h3>Office &amp; Productivity</h3>
+        <p class="level" style="margin-top:0">Proficient In</p>
+        <ul class="chips pro">
+          <li>Microsoft Word</li><li>Microsoft Excel</li><li>Microsoft PowerPoint</li><li>Microsoft Outlook</li>
+          <li>Google Docs</li><li>Google Sheets</li><li>Google Slides</li><li>Google Drive</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>Project Management &amp; Organization</h3>
+        <p class="level" style="margin-top:0">Proficient In</p>
+        <ul class="chips pro">
+          <li>Google Calendar</li><li>Microsoft To Do</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>Communication &amp; Collaboration</h3>
+        <p class="level" style="margin-top:0">Proficient In</p>
+        <ul class="chips pro">
+          <li>Gmail</li><li>Zoom</li><li>Google Meet</li><li>Microsoft Teams</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>Design &amp; Document Management</h3>
+        <p class="level" style="margin-top:0">Proficient In</p>
+        <ul class="chips pro">
+          <li>Canva</li><li>PDF editing and conversion tools</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>E-commerce &amp; Business Support</h3>
+        <p class="level" style="margin-top:0">Proficient In</p>
+        <ul class="chips pro">
+          <li>Meta Business Suite</li><li>Facebook Marketplace</li><li>Online product listing platforms</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <h3>Research &amp; Writing Assistance</h3>
+        <p class="level" style="margin-top:0">Proficient In</p>
+        <ul class="chips pro">
+          <li>Google Chrome</li><li>Grammarly</li><li>ChatGPT</li><li>Online research tools</li>
+        </ul>
+      </div>
+    </div>
+    <p class="tools-note">Spreadsheet skills include formulas (such as SUM and VLOOKUP), filtering, sorting, and data validation. Need something that is not listed? Ask me, and I will tell you plainly whether it is a good fit.</p>
+  </div>
+</section>
+
+<!-- WORK SAMPLES -->
+<section id="samples">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Work Samples</p>
+      <h2>Demonstration projects</h2>
+      <p class="lead">Nine sample projects showing how I prepare, organize, and present the kind of work clients hand to a virtual assistant.</p>
+    </div>
+    <div class="sample-note"><strong>Please note:</strong> every project below is a <strong>SAMPLE / DEMONSTRATION PROJECT</strong> made with fictional names, businesses, and figures. None of it is actual client work.</div>
+
+    <!-- SAMPLE 1 -->
+    <article class="sample" id="sample-1">
+      <div class="sample-head">
+        <h3><small>SAMPLE 01 · DATA ENTRY &amp; SPREADSHEET</small>Customer Order Data Entry</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Turn scattered order messages into one clean, searchable order sheet.</dd></div>
+          <div><dt>Task performed</dt><dd>Encoded 8 orders, calculated line totals, standardized dates and payment names, and added an order status column.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Sheets (also works in Microsoft Excel)</dd></div>
+          <div><dt>Process</dt><dd>Read each message, entered the details in fixed columns, applied the formula <code>Qty × Unit Price</code>, then checked every row against the source before finishing.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="preview scroll">
+          <table class="sheet">
+            <thead><tr><th>Order ID</th><th>Date</th><th>Customer</th><th>Item</th><th>Qty</th><th>Unit Price (₱)</th><th>Total (₱)</th><th>Payment</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>ORD-1001</td><td>2026-10-05</td><td>Maria Santos</td><td>Canvas Tote Bag</td><td class="num">2</td><td class="num">350</td><td class="num">700</td><td>GCash</td><td><span class="tag ok">Delivered</span></td></tr>
+              <tr><td>ORD-1002</td><td>2026-10-05</td><td>Paolo Reyes</td><td>Ceramic Mug</td><td class="num">4</td><td class="num">180</td><td class="num">720</td><td>COD</td><td><span class="tag ok">Delivered</span></td></tr>
+              <tr><td>ORD-1003</td><td>2026-10-06</td><td>Ana Lim</td><td>Scented Candle (Small)</td><td class="num">3</td><td class="num">250</td><td class="num">750</td><td>Bank Transfer</td><td><span class="tag ok">Delivered</span></td></tr>
+              <tr><td>ORD-1004</td><td>2026-10-07</td><td>Rico Dela Cruz</td><td>Notebook (A5)</td><td class="num">5</td><td class="num">120</td><td class="num">600</td><td>GCash</td><td><span class="tag ok">Delivered</span></td></tr>
+              <tr><td>ORD-1005</td><td>2026-10-08</td><td>Liza Mendoza</td><td>Canvas Tote Bag</td><td class="num">1</td><td class="num">350</td><td class="num">350</td><td>COD</td><td><span class="tag warn">Shipped</span></td></tr>
+              <tr><td>ORD-1006</td><td>2026-10-09</td><td>Ben Cruz</td><td>Ceramic Mug</td><td class="num">2</td><td class="num">180</td><td class="num">360</td><td>GCash</td><td><span class="tag warn">Shipped</span></td></tr>
+              <tr><td>ORD-1007</td><td>2026-10-10</td><td>Carla Navarro</td><td>Scented Candle (Small)</td><td class="num">6</td><td class="num">250</td><td class="num">1,500</td><td>Bank Transfer</td><td><span class="tag bad">Processing</span></td></tr>
+              <tr><td>ORD-1008</td><td>2026-10-11</td><td>Joel Garcia</td><td>Notebook (A5)</td><td class="num">10</td><td class="num">120</td><td class="num">1,200</td><td>GCash</td><td><span class="tag bad">Processing</span></td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="4">TOTAL</td><td class="num">33</td><td></td><td class="num">6,180</td><td colspan="2"></td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-note">Names and figures are fictional. Totals use <code>=D2*E2</code> per row and <code>=SUM()</code> in the footer.</p>
+      </div>
+    </article>
+
+    <!-- SAMPLE 2 -->
+    <article class="sample" id="sample-2">
+      <div class="sample-head">
+        <h3><small>SAMPLE 02 · BUSINESS RECORDS</small>Client Directory &amp; Invoice Log</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Give a small service business one organized place for client details and payment status.</dd></div>
+          <div><dt>Task performed</dt><dd>Built a client directory and an invoice log with consistent IDs, status labels, and automatic totals for billed, paid, and outstanding amounts.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Sheets, Google Drive</dd></div>
+          <div><dt>Process</dt><dd>Grouped records by type, assigned unique IDs, set a fixed date format, and used a dropdown (data validation) for status so entries stay consistent.</dd></div>
+        </dl>
+        <p class="preview-label">Final output · Client directory</p>
+        <div class="preview scroll">
+          <table class="sheet">
+            <thead><tr><th>Client ID</th><th>Business</th><th>Contact Person</th><th>Service</th><th>Email</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>CL-001</td><td>Sample Bakehouse</td><td>Dana Flores</td><td>Monthly bookkeeping support</td><td>dana@example.com</td><td><span class="tag ok">Active</span></td></tr>
+              <tr><td>CL-002</td><td>Demo Plant Studio</td><td>Mark Villanueva</td><td>Product listing updates</td><td>mark@example.com</td><td><span class="tag ok">Active</span></td></tr>
+              <tr><td>CL-003</td><td>Sample Fitness Co.</td><td>Irene Castro</td><td>Scheduling and email support</td><td>irene@example.com</td><td><span class="tag warn">On hold</span></td></tr>
+              <tr><td>CL-004</td><td>Example Print Shop</td><td>Noel Bautista</td><td>Customer database clean-up</td><td>noel@example.com</td><td><span class="tag ok">Active</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="preview-label" style="margin-top:20px">Final output · Invoice log</p>
+        <div class="preview scroll">
+          <table class="sheet">
+            <thead><tr><th>Invoice</th><th>Client</th><th>Issued</th><th>Due</th><th>Amount (₱)</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>INV-001</td><td>CL-001</td><td>2026-09-01</td><td>2026-09-15</td><td class="num">3,500</td><td><span class="tag ok">Paid</span></td></tr>
+              <tr><td>INV-002</td><td>CL-002</td><td>2026-09-05</td><td>2026-09-20</td><td class="num">2,000</td><td><span class="tag ok">Paid</span></td></tr>
+              <tr><td>INV-003</td><td>CL-004</td><td>2026-10-25</td><td>2026-11-10</td><td class="num">4,800</td><td><span class="tag warn">Unpaid</span></td></tr>
+              <tr><td>INV-004</td><td>CL-001</td><td>2026-10-01</td><td>2026-10-15</td><td class="num">1,500</td><td><span class="tag ok">Paid</span></td></tr>
+              <tr><td>INV-005</td><td>CL-003</td><td>2026-10-05</td><td>2026-10-20</td><td class="num">2,750</td><td><span class="tag bad">Overdue</span></td></tr>
+              <tr><td>INV-006</td><td>CL-002</td><td>2026-10-30</td><td>2026-11-15</td><td class="num">3,200</td><td><span class="tag warn">Unpaid</span></td></tr>
+            </tbody>
+            <tfoot>
+              <tr><td colspan="4">Total billed</td><td class="num">17,750</td><td></td></tr>
+              <tr><td colspan="4">Total paid</td><td class="num">7,000</td><td></td></tr>
+              <tr><td colspan="4">Outstanding</td><td class="num">10,750</td><td></td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="formula-note">All businesses, people, and email addresses are fictional.</p>
+      </div>
+    </article>
+
+    <!-- SAMPLE 3 -->
+    <article class="sample" id="sample-3">
+      <div class="sample-head">
+        <h3><small>SAMPLE 03 · DOCUMENT FORMATTING</small>Formatted Price Quotation</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Turn rough notes into a professional, ready-to-send business document.</dd></div>
+          <div><dt>Task performed</dt><dd>Typed and formatted a quotation with a letterhead, aligned item table, computed totals, and clear terms.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Docs or Microsoft Word, PDF export</dd></div>
+          <div><dt>Process</dt><dd>Set consistent fonts and spacing, aligned figures to the right, proofread the wording and numbers, then exported the final file as a PDF.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="paper-wrap">
+          <div class="paper">
+            <div class="lh"><b>Sample Home Goods Co.</b><span>Fictional business · Quotation No. QT-2026-014</span></div>
+            <p class="small">Date: November 1, 2026<br>Prepared for: Ms. Helen Ramos, Demo Events Studio<br>Valid until: November 15, 2026</p>
+            <h4>Price Quotation: Client Gift Sets</h4>
+            <p>Thank you for your inquiry. Below is our quotation for 20 client gift sets with personalized cards and delivery.</p>
+            <table>
+              <thead><tr><th>Item</th><th class="r">Qty</th><th class="r">Unit Price (₱)</th><th class="r">Amount (₱)</th></tr></thead>
+              <tbody>
+                <tr><td>Gift Set A (mug, candle, notebook)</td><td class="r">20</td><td class="r">850.00</td><td class="r">17,000.00</td></tr>
+                <tr><td>Personalized card printing</td><td class="r">20</td><td class="r">40.00</td><td class="r">800.00</td></tr>
+                <tr><td>Delivery fee</td><td class="r">1</td><td class="r">500.00</td><td class="r">500.00</td></tr>
+                <tr><td colspan="3"><b>Total</b></td><td class="r"><b>18,300.00</b></td></tr>
+              </tbody>
+            </table>
+            <p><b>Terms</b></p>
+            <ul class="small" style="margin-top:0">
+              <li>A 50% down payment is required to confirm the order.</li>
+              <li>Production time is 7 working days after the down payment.</li>
+              <li>Prices are valid for 14 days from the date above.</li>
+            </ul>
+            <p class="small" style="margin-bottom:0">Prepared by: Sample Home Goods Co. Sales Team</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SAMPLE 4 -->
+    <article class="sample" id="sample-4">
+      <div class="sample-head">
+        <h3><small>SAMPLE 04 · ONLINE RESEARCH</small>Supplier Comparison Report</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Help a small online shop choose a packaging supplier based on price, minimum order, and speed.</dd></div>
+          <div><dt>Task performed</dt><dd>Gathered supplier details, compared them in one table, and wrote a short recommendation.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Chrome, Google Sheets, Google Docs</dd></div>
+          <div><dt>Process</dt><dd>Searched for suppliers, recorded the same details for each one, computed price per piece and minimum order cost, and noted where each detail was found.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="preview pad report">
+          <h4 style="margin-top:0">Request</h4>
+          <p>The client sells handmade soaps online and needs kraft mailer boxes. Compare three suppliers and recommend one.</p>
+          <div class="callout"><b>Sample data notice:</b> the suppliers below are invented for demonstration. In real work, each row would include the source link and the date I checked it.</div>
+          <h4>Comparison</h4>
+          <div class="scroll">
+            <table class="sheet">
+              <thead><tr><th>Supplier</th><th>Location</th><th>Price per 100 pcs (₱)</th><th>Price per piece (₱)</th><th>Minimum order</th><th>Cost of minimum order (₱)</th><th>Lead time</th><th>Contact</th></tr></thead>
+              <tbody>
+                <tr><td>GreenWrap Trading</td><td>Manila</td><td class="num">1,850</td><td class="num">18.50</td><td class="num">100 pcs</td><td class="num">1,850</td><td>5 days</td><td>sales@example.com</td></tr>
+                <tr><td>BoxNest Packaging</td><td>Cavite</td><td class="num">1,720</td><td class="num">17.20</td><td class="num">200 pcs</td><td class="num">3,440</td><td>7 days</td><td>hello@example.com</td></tr>
+                <tr><td>PackRight Supplies</td><td>Quezon City</td><td class="num">2,050</td><td class="num">20.50</td><td class="num">50 pcs</td><td class="num">1,025</td><td>3 days</td><td>orders@example.com</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h4>Findings</h4>
+          <ul>
+            <li><b>BoxNest Packaging</b> has the lowest price per piece, but its 200-piece minimum means the highest upfront cost.</li>
+            <li><b>PackRight Supplies</b> is the fastest and has the smallest minimum order, but costs the most per piece.</li>
+            <li><b>GreenWrap Trading</b> sits in the middle on price, minimum order, and lead time.</li>
+          </ul>
+          <h4>Recommendation</h4>
+          <p style="margin-bottom:0">For a first order, GreenWrap Trading offers the best balance. If monthly volume grows past 200 boxes, switching to BoxNest Packaging would lower the cost per piece.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SAMPLE 5 -->
+    <article class="sample" id="sample-5">
+      <div class="sample-head">
+        <h3><small>SAMPLE 05 · E-COMMERCE</small>Product Listing</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Prepare a complete, easy-to-read product listing ready to post on an online store.</dd></div>
+          <div><dt>Task performed</dt><dd>Wrote the title, organized specifications, formatted the description into scannable points, and added tags and shipping information.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Docs, Canva (for the photo), listing platform editor</dd></div>
+          <div><dt>Process</dt><dd>Took supplier notes, rewrote them in clear buyer-focused language, checked every spec against the notes, and formatted for quick reading on mobile.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="preview pad">
+          <div class="listing">
+            <div class="photo-ph">Product photo goes here<br>(sample listing)</div>
+            <div>
+              <h3 style="margin-bottom:4px">Handmade Ceramic Mug, 350 ml, Matte Finish</h3>
+              <div class="price">₱180.00</div>
+              <p class="small" style="color:var(--muted);margin:2px 0 14px">SKU: MUG-01 · In stock · Ships in 1–2 working days</p>
+              <p>A sturdy everyday mug with a smooth matte glaze and a comfortable handle. It works for coffee, tea, or hot chocolate, and it makes an easy gift.</p>
+              <ul>
+                <li>Holds 350 ml, a good size for a full cup</li>
+                <li>Dishwasher and microwave safe</li>
+                <li>Matte glaze, available in Cream, Sage, and Charcoal</li>
+                <li>Packed in a protective box for safe delivery</li>
+              </ul>
+              <table class="specs">
+                <tr><td>Material</td><td>Ceramic</td></tr>
+                <tr><td>Capacity</td><td>350 ml</td></tr>
+                <tr><td>Height</td><td>9.5 cm</td></tr>
+                <tr><td>Colors</td><td>Cream, Sage, Charcoal</td></tr>
+                <tr><td>Category</td><td>Home &amp; Kitchen › Drinkware</td></tr>
+                <tr><td>Tags</td><td>ceramic mug, coffee mug, handmade, gift idea</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- SAMPLE 6 -->
+    <article class="sample" id="sample-6">
+      <div class="sample-head">
+        <h3><small>SAMPLE 06 · INVENTORY TRACKING</small>Inventory Tracker with Reorder Alerts</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Let a small seller see current stock, stock value, and which items need reordering at a glance.</dd></div>
+          <div><dt>Task performed</dt><dd>Set up a tracker where current stock, status, and stock value are calculated automatically.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Sheets (formulas, conditional formatting)</dd></div>
+          <div><dt>Process</dt><dd>Listed each SKU, entered opening stock, stock in, and sales, then added formulas so the sheet updates itself whenever numbers change.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="preview scroll">
+          <table class="sheet">
+            <thead><tr><th>SKU</th><th>Item</th><th>Opening</th><th>Stock In</th><th>Sold</th><th>Current Stock</th><th>Reorder Level</th><th>Status</th><th>Unit Cost (₱)</th><th>Stock Value (₱)</th></tr></thead>
+            <tbody>
+              <tr><td>MUG-01</td><td>Ceramic Mug 350 ml</td><td class="num">40</td><td class="num">20</td><td class="num">34</td><td class="num">26</td><td class="num">15</td><td><span class="tag ok">OK</span></td><td class="num">95</td><td class="num">2,470</td></tr>
+              <tr><td>TOT-01</td><td>Canvas Tote Bag</td><td class="num">30</td><td class="num">0</td><td class="num">22</td><td class="num">8</td><td class="num">10</td><td><span class="tag bad">Reorder</span></td><td class="num">140</td><td class="num">1,120</td></tr>
+              <tr><td>CND-01</td><td>Scented Candle (Small)</td><td class="num">25</td><td class="num">24</td><td class="num">30</td><td class="num">19</td><td class="num">12</td><td><span class="tag ok">OK</span></td><td class="num">120</td><td class="num">2,280</td></tr>
+              <tr><td>NTB-01</td><td>Notebook (A5)</td><td class="num">60</td><td class="num">0</td><td class="num">41</td><td class="num">19</td><td class="num">20</td><td><span class="tag bad">Reorder</span></td><td class="num">55</td><td class="num">1,045</td></tr>
+              <tr><td>STK-01</td><td>Sticker Pack</td><td class="num">80</td><td class="num">0</td><td class="num">52</td><td class="num">28</td><td class="num">25</td><td><span class="tag ok">OK</span></td><td class="num">18</td><td class="num">504</td></tr>
+              <tr><td>PCH-01</td><td>Zip Pouch</td><td class="num">20</td><td class="num">10</td><td class="num">27</td><td class="num">3</td><td class="num">8</td><td><span class="tag bad">Reorder</span></td><td class="num">70</td><td class="num">210</td></tr>
+            </tbody>
+            <tfoot><tr><td colspan="7">Items to reorder: 3</td><td colspan="2">Total stock value</td><td class="num">7,629</td></tr></tfoot>
+          </table>
+        </div>
+        <p class="formula-note">Formulas used: Current Stock <code>=C2+D2-E2</code> · Status <code>=IF(F2&lt;=G2,"Reorder","OK")</code> · Stock Value <code>=F2*I2</code>. Product names and numbers are fictional.</p>
+      </div>
+    </article>
+
+    <!-- SAMPLE 7 -->
+    <article class="sample" id="sample-7">
+      <div class="sample-head">
+        <h3><small>SAMPLE 07 · TRANSCRIPTION</small>Client Call Transcript</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Convert a recorded call into a clean, readable transcript that is easy to search and reference.</dd></div>
+          <div><dt>Task performed</dt><dd>Transcribed a short fictional call with speaker labels and timestamps, and marked unclear audio.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Docs, headphones with audio playback controls</dd></div>
+          <div><dt>Process</dt><dd>Listened in short segments, typed what was said, removed filler words for readability, then replayed the audio to check names and numbers.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="preview pad transcript">
+          <p><span class="ts">[00:00:04]</span><span class="sp">Shop Owner:</span><span>Thanks for joining. I want to go over the schedule for the holiday sale.</span></p>
+          <p><span class="ts">[00:00:11]</span><span class="sp">Assistant:</span><span>Of course. I prepared a draft timeline in the shared spreadsheet for you to review.</span></p>
+          <p><span class="ts">[00:00:19]</span><span class="sp">Shop Owner:</span><span>Great. Can the product photos be ready by November 20?</span></p>
+          <p><span class="ts">[00:00:26]</span><span class="sp">Assistant:</span><span>Yes, if I receive the final photo list by November 15. I will confirm by email today.</span></p>
+          <p><span class="ts">[00:00:36]</span><span class="sp">Shop Owner:</span><span>Perfect. Please also update the price list. The new tote bag price is [inaudible 00:00:42] pesos.</span></p>
+          <p><span class="ts">[00:00:48]</span><span class="sp">Assistant:</span><span>Noted. Could you send that price in writing so I record it correctly?</span></p>
+          <p><span class="ts">[00:00:54]</span><span class="sp">Shop Owner:</span><span>Sure, I will message it after this call.</span></p>
+          <p style="margin-bottom:0"><span class="ts">[00:00:58]</span><span class="sp">Assistant:</span><span>Thank you. I will send a summary of today's action items within the hour.</span></p>
+        </div>
+        <p class="formula-note">Fictional conversation. Formatting conventions: speaker labels, timestamps in brackets, and <code>[inaudible]</code> tags instead of guessing unclear words.</p>
+      </div>
+    </article>
+
+    <!-- SAMPLE 8 -->
+    <article class="sample" id="sample-8">
+      <div class="sample-head">
+        <h3><small>SAMPLE 08 · EMAIL &amp; CUSTOMER SUPPORT</small>Customer Inquiry Reply Templates</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Provide polite, clear, ready-to-use replies for common messages a small business receives.</dd></div>
+          <div><dt>Task performed</dt><dd>Wrote three reply templates that a business owner can approve once and reuse.</dd></div>
+          <div><dt>Tools used</dt><dd>Gmail (templates and labels), Grammarly</dd></div>
+          <div><dt>Process</dt><dd>Identified frequent questions, drafted short answers in a friendly professional tone, and checked grammar and tone before finalizing.</dd></div>
+        </dl>
+        <p class="preview-label">Final output</p>
+        <div class="grid g3">
+          <div>
+            <p class="mail-label">1 · Price inquiry</p>
+            <div class="mail">
+              <div class="subj">Re: Question about your ceramic mugs</div>
+              <p>Hello [Name],</p>
+              <p>Thank you for your interest in our ceramic mugs. The 350 ml mug is ₱180 each, and a set of four is ₱680. They are available in Cream, Sage, and Charcoal.</p>
+              <p>Let me know the quantity and color you prefer, and I will prepare your order details.</p>
+              <p style="margin-bottom:0">Best regards,<br>[Business Name]</p>
+            </div>
+          </div>
+          <div>
+            <p class="mail-label">2 · Order status update</p>
+            <div class="mail">
+              <div class="subj">Your order ORD-1005 has shipped</div>
+              <p>Hello [Name],</p>
+              <p>Good news! Your order has been shipped and should arrive within 3–5 working days. Your tracking number is [Tracking No.].</p>
+              <p>If anything looks wrong when it arrives, please reply to this email and we will help right away.</p>
+              <p style="margin-bottom:0">Thank you,<br>[Business Name]</p>
+            </div>
+          </div>
+          <div>
+            <p class="mail-label">3 · Reschedule request</p>
+            <div class="mail">
+              <div class="subj">Request to reschedule our meeting</div>
+              <p>Hello [Name],</p>
+              <p>I am writing on behalf of [Client Name]. Unfortunately, the meeting set for [Date, Time] needs to be moved.</p>
+              <p>Would [Option 1] or [Option 2] work for you? We apologize for the inconvenience.</p>
+              <p style="margin-bottom:0">Kind regards,<br>[Assistant Name]</p>
+            </div>
+          </div>
+        </div>
+        <p class="formula-note">Templates use fictional products and placeholders in [brackets].</p>
+      </div>
+    </article>
+
+    <!-- SAMPLE 9 -->
+    <article class="sample" id="sample-9">
+      <div class="sample-head">
+        <h3><small>SAMPLE 09 · SCHEDULING &amp; FILE ORGANIZATION</small>Weekly Schedule &amp; Drive Folder System</h3>
+        <span class="badge">SAMPLE PROJECT</span>
+      </div>
+      <div class="sample-body">
+        <dl class="meta">
+          <div><dt>Objective</dt><dd>Set up a simple routine and a folder system so work and files are always easy to find.</dd></div>
+          <div><dt>Task performed</dt><dd>Created a part-time weekly work plan for a fictional client and a Google Drive folder structure with a file naming rule.</dd></div>
+          <div><dt>Tools used</dt><dd>Google Calendar, Google Drive, Microsoft To Do</dd></div>
+          <div><dt>Process</dt><dd>Grouped recurring tasks by day, blocked time on the calendar, and named every file the same way so it can be searched by date, client, or document type.</dd></div>
+        </dl>
+        <div class="grid g2">
+          <div>
+            <p class="preview-label">Weekly work plan (3 hours per day)</p>
+            <div class="preview scroll">
+              <table class="sheet wrapcells" style="min-width:0">
+                <thead><tr><th>Day</th><th>Focus</th><th>Time</th></tr></thead>
+                <tbody>
+                  <tr><td>Mon</td><td>Inbox sorting, calendar check, weekly task list</td><td>9:00–12:00</td></tr>
+                  <tr><td>Tue</td><td>Data entry and spreadsheet updates</td><td>9:00–12:00</td></tr>
+                  <tr><td>Wed</td><td>Online research and findings summary</td><td>9:00–12:00</td></tr>
+                  <tr><td>Thu</td><td>Documents, formatting, and proofreading</td><td>9:00–12:00</td></tr>
+                  <tr><td>Fri</td><td>Product listings, inventory check, weekly report</td><td>9:00–12:00</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div>
+            <p class="preview-label">Google Drive folder structure</p>
+            <div class="preview">
+<pre class="tree">Client_Name/
+├── 01_Admin/
+│   ├── Contracts/
+│   └── Invoices/
+├── 02_Spreadsheets/
+├── 03_Documents/
+│   ├── Drafts/
+│   └── Final/
+├── 04_Research/
+├── 05_Product_Listings/
+└── 06_Archive/
+
+File naming rule:
+YYYY-MM-DD_Client_Document-Type_v1
+e.g. 2026-11-01_Sample-Shop_Price-List_v2</pre>
+            </div>
+          </div>
+        </div>
+        <p class="formula-note">Fictional client and schedule, shown to demonstrate how I organize recurring work.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- WHY WORK WITH ME -->
+<section class="alt" id="why">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Why Work With Me</p>
+      <h2>What you can count on</h2>
+    </div>
+    <div class="grid g3 why">
+      <div class="card"><h3>Detail-oriented</h3><p style="margin:0;color:var(--muted)">I check entries, numbers, and spelling twice, so you do not have to.</p></div>
+      <div class="card"><h3>Organized and systematic</h3><p style="margin:0;color:var(--muted)">Clear file names, tidy folders, and structured records that stay easy to use.</p></div>
+      <div class="card"><h3>Quick to learn</h3><p style="margin:0;color:var(--muted)">I pick up your tools, templates, and preferences quickly and follow your process.</p></div>
+      <div class="card"><h3>Responsive and flexible</h3><p style="margin:0;color:var(--muted)">Quick replies, and flexible hours that we agree on at the start of each arrangement.</p></div>
+      <div class="card"><h3>Accurate, on-time delivery</h3><p style="margin:0;color:var(--muted)">I confirm the scope and deadline first, then deliver as agreed.</p></div>
+      <div class="card"><h3>Open to feedback</h3><p style="margin:0;color:var(--muted)">I welcome clear instructions and corrections, and I apply them consistently.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AVAILABILITY -->
+<section id="availability">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Availability &amp; Work Arrangement</p>
+      <h2>Flexible, part-time support</h2>
+      <p class="lead">We agree on the scope, schedule, and deadlines before work begins, so expectations are clear for both of us.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>Part-time tasks</h3><p style="margin:0;color:var(--muted)">Recurring weekly help with data entry, inbox and calendar support, or product records.</p></div>
+      <div class="card"><h3>Project-based work</h3><p style="margin:0;color:var(--muted)">One-time projects such as data clean-up, document preparation, research, or listing batches.</p></div>
+      <div class="card"><h3>Flexible arrangements</h3><p style="margin:0;color:var(--muted)">Hours and deadlines adjusted to your workload and the time zone you work in.</p></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card"><h3>Working hours</h3><p style="margin:0;color:var(--muted)">Flexible, agreed per client. Based in the Philippines (GMT+8).</p></div>
+      <div class="card"><h3>Rates</h3><p style="margin:0;color:var(--muted)">Available on request and negotiable depending on the scope and type of work.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <div>
+        <p class="eyebrow" style="color:#E8C7CD">Contact</p>
+        <h2>Let's talk about your tasks</h2>
+        <p>Tell me what you need help with, and I will reply with whether it is a good fit, a suggested approach, and the next steps.</p>
+        <div class="btn-row" style="margin-top:20px">
+          <a class="btn light" href="mailto:greattaste0101@gmail.com?subject=Virtual%20Assistant%20Inquiry">Send an Email</a>
+          <a class="btn outline-light" href="https://wa.me/639082543348" target="_blank" rel="noopener">WhatsApp Me</a>
+        </div>
+      </div>
+      <div>
+        <ul class="contact-lines">
+          <li><span>Email</span><a href="mailto:greattaste0101@gmail.com">greattaste0101@gmail.com</a></li>
+          <li><span>WhatsApp</span><a href="https://wa.me/639082543348" target="_blank" rel="noopener">+63 908 254 3348</a></li>
+          <li><span>Location</span>Philippines (GMT+8)</li>
+        </ul>
+        <h3 style="font-size:1rem;margin:20px 0 8px">Helpful to include in your message</h3>
+        <ul class="brief">
+          <li>The tasks you need help with</li>
+          <li>Approximate volume and deadline</li>
+          <li>Tools or platforms you use</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 JAI Resume Maker. All rights reserved.</span>
+    <span>All sample projects use fictional data.</span>
+  </div>
+</footer>
+
+</body>
+</html>
